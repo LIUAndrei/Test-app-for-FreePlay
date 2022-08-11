@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <title>Moving vehicle across a stage</title>
+  </head>
+  <body>
+    <div class="main-box flex flex-row mt-12 ml-12 mr-12">
+      <div
+        class="main-box__stage-area stage-area border-gray-800 rounded-lg border m-6 bg-slate-100 relative"
+      >
+        <div class="stage-area__vehicle vehicle"></div>
+        <div
+          class="stage-area__destination destination w-2 h-2 bg-red-900 rounded-full absolute invisible"
+        ></div>
+
+        <div
+          class="stage-area__coordline-container coordlines-container w-full h-full relative"
+        >
+          <div
+            class="coordlines-container__x coordline__x w-full h-0 outline-1 outline outline-green-300 absolute"
+          ></div>
+          <div
+            class="coordlines-container__y coordline__y w-0 h-full outline-1 outline outline-green-300 absolute"
+          ></div>
+        </div>
+      </div>
+      <div
+        class="main-box__selector-area selector-area border-gray-800 rounded-lg border m-6 bg-white flex flex-col"
+      >
+        <div
+          class="selector-area__tweakers tweakers flex-grow m-1 border border-slate-300 bg-slate-100 rounded-md"
+        >
+          <label class="tweakers__label" for="speed"
+            >Vehicle speed in pixels/second:<input
+              class="tweakers__speed"
+              type="number"
+              name="speed"
+              id="speed"
+          /></label>
+
+          <button class="tweakers__go-button go-button">GO!</button>
+        </div>
+
+        <div
+          class="selector-area__coordinates-list coordinates-list flex-grow m-1 border border-slate-300 bg-slate-100 rounded-md"
+        >
+          <p class="coordinates-list__vehicleX vehicleX text-xs">
+            Vehicle X:
+            <span class="vehicleX__span text-base text-green-700">100</span>
+          </p>
+          <p class="coordinates-list__vehicleY vehicleY text-xs">
+            Vehicle Y:
+            <span class="vehicleY__span text-base text-green-700">100</span>
+          </p>
+          <p class="coordinates-list__mouseX mouseX text-xs">
+            Mouse X: <span class="mouseX__span text-base text-green-700"></span>
+          </p>
+          <p class="coordinates-list__mouseY mouseY text-xs">
+            Mouse Y: <span class="mouseY__span text-base text-green-700"></span>
+          </p>
+          <p class="coordinates-list__point-toX point-toX text-xs">
+            Go to X:
+            <span class="point-toX__span text-base text-green-700"></span>
+          </p>
+          <p class="coordinates-list__point-toY point-toY text-xs">
+            Go to Y:
+            <span class="point-toY__span text-base text-green-700"></span>
+          </p>
+          <p class="coordinates-list__vehicle-angle vehicle-angle text-xs">
+            New vehicle angle(clockwise):
+            <span class="vehicle-angle__span text-base text-green-700"></span>
+          </p>
+          <p class="coordinates-list__travel-distance travel-distance text-xs">
+            Travel distance:
+            <span class="travel-distance__span text-base text-green-700"></span>
+          </p>
+          <p class="coordinates-list__time-speed time-speed text-xs">
+            Travel time:
+            <span class="time-speed__span text-base text-green-700"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
